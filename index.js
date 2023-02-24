@@ -11,7 +11,7 @@ const questions = [ "What is the title of your project?", "What's the descriptio
 ];
 
 // function to write README file
-function writeToFile(fileName, ...data) {
+function writeToFile(fileName, data) {
     fs.writeFile(fileName, data + `\n`, (err) =>
   err ? console.error(err) : console.log('Commit logged!'))
 }
@@ -28,45 +28,53 @@ inquirer
       message: questions[0],
       name: 'title',
     },
-    // {
-    //   type: 'input',
-    //   message: questions[1],
-    //   name: 'description',
-    // },
-    // {
-    //   type: 'input',
-    //   message: questions[2],
-    //   name: 'installation',
-    // },
-    // {
-    //   type: 'input',
-    //   message: questions[3],
-    //   name: 'usage', 
-    // },
-    // {
-    //   type: 'input',
-    //   message: questions[4],
-    //   name: 'contributors', 
-    // },
-    // {
-    //   type: 'input',
-    //   message: questions[5],
-    //   name: 'tests', 
-    // },
-    // {
-    //   type: 'input',
-    //   message: questions[6],
-    //   name: 'license', 
-    // },
+    {
+      type: 'input',
+      message: questions[1],
+      name: 'description',
+    },
+    {
+      type: 'input',
+      message: questions[2],
+      name: 'installation',
+    },
+    {
+      type: 'input',
+      message: questions[3],
+      name: 'usage', 
+    },
+    {
+      type: 'input',
+      message: questions[4],
+      name: 'contributors', 
+    },
+    {
+      type: 'input',
+      message: questions[5],
+      name: 'tests', 
+    },
+    {
+      type: 'input',
+      message: questions[6],
+      name: 'license', 
+    },
   ])
   .then((response) =>
-    writeToFile("userREADME.md", generateMarkdown.generateMarkdown(response.title), 
+
+    writeToFile("userREADME.md", generateMarkdown.generateMarkdown(response.title) + 
     "## Table of Contents \n" +
-    "-[Description](#description) \n"+
+    "- [Description](#description) \n"+
     "- [Installation](#installation) \n"+
     "- [Usage](#usage) \n"+
-    "- [Credits](#credits) \n"+
-    "- [License](#license) \n"
+    "- [Credits](#credits) \n" +
+    "- [License](#license) \n" +
+
+    "## Description \n" + response.description + "\n \n" +
+    "## Installation \n" + response.installation + "\n \n" +
+    "## Usage \n" + response.usage + "\n \n" +
+    "## Contributors \n" + response.contributors + "\n \n" + //use argv to split?
+    "## Tests \n" + response.tests + "\n \n" +
+    "## License \n" + response.license + "\n \n" 
     
     )
     

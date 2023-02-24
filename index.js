@@ -30,8 +30,9 @@ function verifyLicense(licenseChoice){
       return "This project is covered under the Apache 2.0 License. Please refer to the repository for more information."
       break;
     default:
-      return "Sorry, was that an option? please try again."
-      verifyLicense(licenseChoice)
+      console.log("Sorry, we didn't catch that. Please manually edit the README file with a licnese of your choosing.")
+      return "**insert license descrption here**"
+      break;
   }
 }
 
@@ -93,7 +94,9 @@ inquirer
     "## Installation \n" + response.installation + "\n \n" +
     "## Usage \n" + response.usage + "\n \n" +
     "## Contributors \n" + response.contributors + "\n \n" +
-    "## Tests \n" + response.tests + "\n \n" 
+    "## Tests \n" + response.tests + "\n \n"+
+    "## License \n" + verifyLicense(response.license) + "\n \n" 
+ 
 )
     
   );

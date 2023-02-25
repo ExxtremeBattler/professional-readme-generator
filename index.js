@@ -1,5 +1,5 @@
 const fs = require("fs");
-const path = require('path');
+const path = require("path");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 // const { title } = require("process");
@@ -10,32 +10,36 @@ const questions = [ "What is the title of your project?", "What's the descriptio
  "Finally, Which license would you like to use? Your current options are : MIT, Apache 2.0, or The Unilicense."
 ];
 
+var badge = ""
 
 // function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data + `\n`, (err) =>
-  err ? console.error(err) : console.log('Commit logged!'))
+  err ? console.error(err) : console.log("Readme created! Please navigate to the results folder for your files."))
 }
 
 function verifyLicense(licenseChoice){
 
   function callback(err) {
     if (err) throw err;
-    console.log('source.txt was copied to destination.txt');
+    console.log("License copied!");
   }
 
   switch(licenseChoice.toUpperCase()){
     case "MIT":
-      // destination.txt will be created or overwritten by default.
-      fs.copyFile('usableLicenses/MIT LICENSE.txt', 'results/LICENSE.txt', callback);
+
+      fs.copyFile("usableLicenses/MIT LICENSE.txt", "results/LICENSE.txt", callback);
+      badge = "[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)"
       return "This project is covered under the MIT License. Please refer to the repository for more information."
       break;
     case "THE UNILICENSE":
-      fs.copyFile('usableLicenses/THE UNILICENSE.txt', 'results/LICENSE.txt', callback);
+      fs.copyFile("usableLicenses/THE UNILICENSE.txt", "results/LICENSE.txt", callback);
+      badge = "[![Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](https://unlicense.org/)"
       return "This project is covered under The Unilicense. Please refer to the repository for more information."
       break;
     case "APACHE 2.0":
-      fs.copyFile('usableLicenses/APACHE 2.0 LICENSE.txt', 'results/LICENSE.txt', callback);
+      fs.copyFile("usableLicenses/APACHE 2.0 LICENSE.txt", "results/LICENSE.txt", callback);
+      badge = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
       return "This project is covered under the Apache 2.0 License. Please refer to the repository for more information."
       break;
     default:
@@ -53,50 +57,53 @@ console.log("Program started. Welcome to the professional README generator.");
 inquirer
   .prompt([
     {
-      type: 'input',
+      type: "input",
       message: questions[0],
-      name: 'title',
+      name: "title",
     },
     {
-      type: 'input',
+      type: "input",
       message: questions[1],
-      name: 'description',
+      name: "description",
     },
     {
-      type: 'input',
+      type: "input",
       message: questions[2],
-      name: 'installation',
+      name: "installation",
     },
     {
-      type: 'input',
+      type: "input",
       message: questions[3],
-      name: 'usage', 
+      name: "usage", 
     },
     {
-      type: 'input',
+      type: "input",
       message: questions[4],
-      name: 'contributors', 
+      name: "contributors", 
     },
     {
-      type: 'input',
+      type: "input",
       message: questions[5],
-      name: 'tests', 
+      name: "tests", 
     },
     {
-      type: 'input',
+      type: "input",
       message: questions[6],
-      name: 'license', 
+      name: "license", 
     },
   ])
   .then((response) =>
 
-    writeToFile("userREADME.md", generateMarkdown.generateMarkdown(response.title) + 
+  verifyLicense(response.license) +
+
+    writeToFile("userREADME.md", generateMarkdown.generateMarkdown(response.title +" "+ badge) + "\n" +
+
     "## Table of Contents \n \n" +
 
     "- [Description](#description) \n"+
     "- [Installation](#installation) \n"+
     "- [Usage](#usage) \n"+
-    "- [Credits](#credits) \n" +
+    "- [Contributors](#Contributors) \n" +
     "- [License](#license) \n \n" +
 
     "## Description \n" + response.description + "\n \n" +

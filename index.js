@@ -19,14 +19,23 @@ function writeToFile(fileName, data) {
 
 function verifyLicense(licenseChoice){
 
-  switch(licenseChoice){
+  function callback(err) {
+    if (err) throw err;
+    console.log('source.txt was copied to destination.txt');
+  }
+
+  switch(licenseChoice.toUpperCase()){
     case "MIT":
+      // destination.txt will be created or overwritten by default.
+      fs.copyFile('usableLicenses/MIT LICENSE.txt', 'results/LICENSE.txt', callback);
       return "This project is covered under the MIT License. Please refer to the repository for more information."
       break;
-    case "The Unilicense":
+    case "THE UNILICENSE":
+      fs.copyFile('usableLicenses/THE UNILICENSE.txt', 'results/LICENSE.txt', callback);
       return "This project is covered under The Unilicense. Please refer to the repository for more information."
       break;
-    case "Apache 2.0":
+    case "APACHE 2.0":
+      fs.copyFile('usableLicenses/APACHE 2.0 LICENSE.txt', 'results/LICENSE.txt', callback);
       return "This project is covered under the Apache 2.0 License. Please refer to the repository for more information."
       break;
     default:
@@ -88,7 +97,7 @@ inquirer
     "- [Installation](#installation) \n"+
     "- [Usage](#usage) \n"+
     "- [Credits](#credits) \n" +
-    "- [License](#license) \n" +
+    "- [License](#license) \n \n" +
 
     "## Description \n" + response.description + "\n \n" +
     "## Installation \n" + response.installation + "\n \n" +

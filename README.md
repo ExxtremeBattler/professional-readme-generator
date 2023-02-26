@@ -26,6 +26,10 @@ After all prompts have been answered, the readmne and license will be created in
 
 ![91882dd56f17adfc5593fbf17d79f947](https://user-images.githubusercontent.com/69109391/221412488-1c5e2108-cddf-408d-917f-f0bfdf8ef25d.png)
 
+WALKTHROUGH VIDEO: https://drive.google.com/file/d/1lhBNIyPOmVssyR6CYilOhDmWx7Do3xAZ/view
+
+Video results can be found in 'results' folder of repo.
+
 ## Credits
 
 The bootcamp for teaching me the skills required for this project, Jesus Christ our Lord, and lastly myself, ExxtremeBattler 

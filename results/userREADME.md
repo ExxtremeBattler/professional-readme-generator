@@ -1,4 +1,4 @@
-# TestReadme [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+# test readme [![Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](https://unlicense.org/)
 
 
 ## Table of Contents 
@@ -6,30 +6,32 @@
 - [Description](#description) 
 - [Installation](#installation) 
 - [Usage](#usage) 
-- [Contributors](#Contributors) 
+- [Contributors](#contributors) 
+- [Tests](#tests) 
 - [License](#license) 
+- [Questions](#questions) 
  
 ## Description 
-A test for the program
+a test readme for users to look at
  
 ## Installation 
-Node.js, a suitable IDE
+node.js, a terminal
  
 ## Usage 
-Run node on the index.js to use the program
+refer to project readme
  
 ## Contributors 
-ExxtremeBattler
+exxtremebattler
  
 ## Tests 
-The program delivers a suitable readme.md and chosen license
+refer to project readme
  
 ## License 
-This project is covered under the MIT License. Please refer to the repository for more information.
+This project is covered under The Unilicense. Please refer to the repository for more information.
  
 ## Questions 
 For any questions, please find my contact info below: 
-Github : [exxtremebattler](https://github.com/exxtremebattler) 
-Email : exxtremebattler@email.com
+Github : [exxtremebattler](https://github.com/exxtremebattler)
+ Email : myemail@email.com
  
 

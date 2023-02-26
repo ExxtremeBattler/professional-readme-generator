@@ -22,7 +22,7 @@ To use the program, run 'node (insert file pathway to index.js file) in the term
 
 Pressing the 'enter' key on any of the prompts will skip it, creating the relevant section though with no information in it, allowing you to manually add information as you deem fit.
 
-After all prompts have been answered, the readmne and license will be created in the 'results' folder, under the names 'readme.md' and 'license.txt' respectively.
+After all prompts have been answered, the readmne and license will be created in the 'results' folder, under the names 'userREADME.md' and 'LICENSE.txt' respectively.
 
 ![91882dd56f17adfc5593fbf17d79f947](https://user-images.githubusercontent.com/69109391/221412488-1c5e2108-cddf-408d-917f-f0bfdf8ef25d.png)
 

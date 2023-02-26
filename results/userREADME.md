@@ -1,4 +1,4 @@
-# test readme [![Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](https://unlicense.org/)
+# test readme [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 
 ## Table of Contents 
@@ -12,7 +12,7 @@
 - [Questions](#questions) 
  
 ## Description 
-a test readme for users to look at
+a readme for the video
  
 ## Installation 
 node.js, a terminal
@@ -21,13 +21,13 @@ node.js, a terminal
 refer to project readme
  
 ## Contributors 
-exxtremebattler
+ExxtremBattler
  
 ## Tests 
-refer to project readme
+refer to this video, as well project readme
  
 ## License 
-This project is covered under The Unilicense. Please refer to the repository for more information.
+This project is covered under the MIT License. Please refer to the repository for more information.
  
 ## Questions 
 For any questions, please find my contact info below: 

@@ -117,8 +117,9 @@ inquirer
     "- [Installation](#installation) \n"+
     "- [Usage](#usage) \n"+
     "- [Contributors](#contributors) \n" +
+    "- [Tests](#tests) \n" +
     "- [License](#license) \n" +
-    "- [Contact](#contact) \n \n" +
+    "- [Questions](#questions) \n \n" +
 
 
     "## Description \n" + response.description + "\n \n" +

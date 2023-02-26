@@ -116,8 +116,10 @@ inquirer
     "- [Description](#description) \n"+
     "- [Installation](#installation) \n"+
     "- [Usage](#usage) \n"+
-    "- [Contributors](#Contributors) \n" +
-    "- [License](#license) \n \n" +
+    "- [Contributors](#contributors) \n" +
+    "- [License](#license) \n" +
+    "- [Contact](#contact) \n \n" +
+
 
     "## Description \n" + response.description + "\n \n" +
     "## Installation \n" + response.installation + "\n \n" +
@@ -127,9 +129,9 @@ inquirer
     "## License \n" + verifyLicense(response.license) + "\n \n"  +
     "## Questions \n" + "For any questions, please find my contact info below: \n" + 
     "Github : [" + response.username + "]" + 
-    "(https://github.com/" + response.username + ") \n" + 
-    "Email : " + response.email +
-    "\n \n" 
+    "(https://github.com/" + response.username + ")" + 
+    "\n Email : " + response.email +
+    "\n \n"
 
  
 )

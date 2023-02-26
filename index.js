@@ -7,7 +7,10 @@ const generateMarkdown = require("./utils/generateMarkdown");
 // array of questions for user
 const questions = [ "What is the title of your project?", "What's the description?", "Any installation instructions?",
  "Any usage information?", "Who has contributed thus far?", "Any tests you wanna include?", 
- "Finally, Which license would you like to use? Your current options are : MIT, Apache 2.0, or The Unilicense."
+ "Which license would you like to use? Your current options are : MIT, Apache 2.0, or The Unilicense.",
+ "Please type in your github username.",
+ "Finally, enter your email address."
+
 ];
 
 var badge = ""
@@ -91,12 +94,22 @@ inquirer
       message: questions[6],
       name: "license", 
     },
+    {
+      type: "input",
+      message: questions[7],
+      name: "username", 
+    },
+    {
+      type: "input",
+      message: questions[8],
+      name: "email", 
+    },
   ])
   .then((response) =>
 
   verifyLicense(response.license) +
 
-    writeToFile("userREADME.md", generateMarkdown.generateMarkdown(response.title +" "+ badge) + "\n" +
+    writeToFile("results/userREADME.md", generateMarkdown.generateMarkdown(response.title +" "+ badge) + "\n" +
 
     "## Table of Contents \n \n" +
 
@@ -111,7 +124,13 @@ inquirer
     "## Usage \n" + response.usage + "\n \n" +
     "## Contributors \n" + response.contributors + "\n \n" +
     "## Tests \n" + response.tests + "\n \n"+
-    "## License \n" + verifyLicense(response.license) + "\n \n" 
+    "## License \n" + verifyLicense(response.license) + "\n \n"  +
+    "## Questions \n" + "For any questions, please find my contact info below: \n" + 
+    "Github : [" + response.username + "]" + 
+    "(https://github.com/" + response.username + ") \n" + 
+    "Email : " + response.email +
+    "\n \n" 
+
  
 )
     
